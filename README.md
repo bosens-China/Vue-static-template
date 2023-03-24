@@ -8,7 +8,7 @@
 <% } %>
 ```
 
-对比一下 vue 的语法
+对比一下 Vue 的语法
 
 ```html
 <h2 v-if="user">{{ user.name }}</h2>
@@ -16,7 +16,7 @@
 
 是不是觉得简洁多了。
 
-设计初衷：为了使用 vue 简洁的语法来描述模板，同时在有限的条件下使用 vue 的组件来达到其他模板引擎继承作用。
+设计初衷：为了使用 Vue 简洁的语法来描述模板，同时在有限的条件下使用 Vue 的组件来达到其他模板引擎继承作用。
 
 ## 支持功能
 
@@ -29,6 +29,7 @@
 - v-show
 - v-text
 - v-html
+- v-bind 有限支持，只支持:style 和:class
 
 ### 特殊元素
 
@@ -50,6 +51,8 @@
 - `<style>`
 - 预处理器
 - scoped
+
+以上内容如果有疏漏之处请翻阅官方文档进行查看 [Vuejs](https://cn.vuejs.org/api/)
 
 ## 快速入手
 
@@ -86,17 +89,17 @@ p {
 </style>
 ```
 
-默认`<style>`标签会叠加生成到 body 元素的下方
+> 默认 `<style>` 会在每个组件下方展示，后续会暴露出 api 支持输出到指定位置
 
 当然这个例子可能太简单了一些，下面就演示一个 vue 官方自带的例子
 
 结构如下
 
 ```sh
-src
-	App.vue
-	components
-		HelloWorld.vue
+- src
+  - App.vue
+  - components
+		- HelloWorld.vue
 ```
 
 ### App.vue
